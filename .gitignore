@@ -1,5 +1,4 @@
 moc_*.cpp
-*.qrc
 *.o
 *.d
 *.a
