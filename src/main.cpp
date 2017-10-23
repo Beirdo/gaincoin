@@ -992,6 +992,10 @@ int64_t GetProofOfWorkReward(int64_t nFees)
     {
         nSubsidy = 6600000000 * COIN;
     }
+    else if(height > 1 && height <= 12500)
+    {
+        nSubsidy = 3627 * COIN;
+    }
 
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfWorkReward() : create=%s nSubsidy=%"PRId64"\n", FormatMoney(nSubsidy).c_str(), nSubsidy);
