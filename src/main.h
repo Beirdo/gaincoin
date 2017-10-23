@@ -573,7 +573,9 @@ public:
         int64_t nValueOut = 0;
         BOOST_FOREACH(const CTxOut& txout, vout)
         {
-            nValueOut += txout.nValue;
+            // 6a - OP_RETURN, used to burn coin
+            if (txout.scriptPubKey[0] != 0x6A)
+                nValueOut += txout.nValue;
             if (!MoneyRange(txout.nValue) || !MoneyRange(nValueOut))
                 throw std::runtime_error("CTransaction::GetValueOut() : value out of range");
         }
