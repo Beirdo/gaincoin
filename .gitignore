@@ -1,0 +1,8 @@
+moc_*.cpp
+*.qrc
+*.o
+*.d
+*.a
+*.swp
+*.bak
+*~
